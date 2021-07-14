@@ -30,7 +30,7 @@ public class Usuario {
 	public void escreveArquivo(String palavra)
 	{
 		try {
-			BufferedWriter bw = new BufferedWriter(new FileWriter("D:\\BSI\\SextoPeriodo\\DOO\\Trabalho-POO2-Agenda\\cadastro.txt"));
+			BufferedWriter bw = new BufferedWriter(new FileWriter("D:\\BSI\\SextoPeriodo\\DOO\\Trabalho-POO2-Agenda\\cadastro.txt",true));
 			bw.write(palavra+"\n");
 			bw.close();
 		} catch (IOException e) {
