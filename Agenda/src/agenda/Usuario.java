@@ -1,5 +1,5 @@
 package agenda;
-import java.io.*;
+import java.util.Scanner;
 
 
 public class Usuario {
@@ -9,34 +9,42 @@ public class Usuario {
 	
 	
 	
-	public void cadastro(String nome, String senha, String email)
+	public void cadastro()
 	{
-		setNome(nome);
-		setSenha(senha);
-		setEmail(email);
+		Scanner s = new Scanner(System.in);
+        System.out.print("Digite seu nome: ");        
+        this.nome = s.nextLine();
+        System.out.print("Digite sua senha: "); 
+        this.senha = s.nextLine();
+        System.out.print("Digite seu email: "); 
+        this.email = s.nextLine();
 		
-		escreveArquivo(nome);
-		escreveArquivo(senha);
-		escreveArquivo(email);
 		
 	}
-	
+
 	public void autenticacao()
 	{
-		
+		String login, password;
+		Scanner s = new Scanner(System.in);
+        do
+        {
+        	System.out.print("Digite seu nome: ");
+        	login = s.nextLine();
+        	System.out.print("Digite seu senha: ");
+        	password = s.nextLine();
+        	if (!(login .equals(this.nome)))
+            {
+            	System.out.println("Login errado");
+            	
+            }if (!(password .equals(this.senha)))
+            {
+            	System.out.println("senha errado");
+            	
+            }
+        }while(!(login .equals(this.nome) && (password .equals(this.senha))));
+        System.out.println("Logado com sucesso!");
 	}
 	
-	public void escreveArquivo(String palavra)
-	{
-		try {
-			BufferedWriter bw = new BufferedWriter(new FileWriter("D:\\BSI\\SextoPeriodo\\DOO\\Trabalho-POO2-Agenda\\cadastro.txt",true));
-			bw.write(palavra+"\n");
-			bw.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 	public void setNome(String nome)
 	{
 		this.nome = nome;
