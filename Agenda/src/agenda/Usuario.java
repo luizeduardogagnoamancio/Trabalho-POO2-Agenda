@@ -1,7 +1,6 @@
 package agenda;
 import java.io.*;
 
-import agenda.files.WriteFile;
 
 public class Usuario {
 	private String nome;
