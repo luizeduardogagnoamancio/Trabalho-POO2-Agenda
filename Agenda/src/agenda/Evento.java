@@ -3,6 +3,8 @@ package agenda;
 import java.util.List;
 import java.util.Scanner;
 
+
+
 public class Evento {
     private String nome;
     private Data data;
@@ -82,6 +84,14 @@ public class Evento {
 
     public void setHora(Hora hora) {
         this.hora = hora;
+    }
+    @Override
+    public String toString()
+    {
+    	System.out.println();
+    	System.out.println();
+    	System.out.println();
+    	return String.format(this.nome + "\n" + this.data.getDia() + "/" + this.data.getMes() + "/"  + this.data.getAno() + "\n" + this.hora.getHora() + ":" + this.hora.getMinuto() + ":" + this.hora.getSegundo());
     }
     
 }

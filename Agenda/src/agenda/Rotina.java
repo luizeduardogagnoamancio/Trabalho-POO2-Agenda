@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Rotina {
+public class Rotina implements Cloneable{
     private String nome;
     private List<Evento> listaEventos;
     
@@ -94,6 +94,18 @@ public class Rotina {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+    
+    public Object clone()
+    {
+    	Rotina obj = null;
+    	try {
+    		obj = (Rotina)super.clone();
+    	}catch (CloneNotSupportedException ex)
+    	{
+    		ex.printStackTrace();
+    	}
+    	return obj;
     }
     
     
