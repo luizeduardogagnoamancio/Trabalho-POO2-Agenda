@@ -5,28 +5,30 @@ import java.util.Scanner;
 
 
 
-public class Evento {
+public class Evento implements PadraoComandoCriar{
     private String nome;
     private Data data;
     private Hora hora;
     
     public Evento() {
         
-        this.criarEvento();
+        this.criar();
         
         
     }
-    
-    public void criarEvento()
-    {
-        Scanner s = new Scanner(System.in);
+    @Override
+    public void criar() {
+    	Scanner s = new Scanner(System.in);
         System.out.print("Digite o nome do evento: ");        
         this.nome = s.nextLine();
         this.data = new Data();
         this.hora = new Hora();
         
         System.out.println("Evento Criado");
-    }
+		
+	}
+    
+    
     
     public void editarEvento()
     {
@@ -93,5 +95,8 @@ public class Evento {
     	System.out.println();
     	return String.format(this.nome + "\n" + this.data.getDia() + "/" + this.data.getMes() + "/"  + this.data.getAno() + "\n" + this.hora.getHora() + ":" + this.hora.getMinuto() + ":" + this.hora.getSegundo());
     }
+
+	
+	
     
 }

@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Rotina implements Cloneable{
+public class Rotina implements Cloneable, PadraoComandoCriar{
     private String nome;
     private List<Evento> listaEventos;
     
     public Rotina() 
     {
         this.listaEventos = new ArrayList<Evento>();
-        this.criarRotina();
+        this.criar();
     }
-    public void criarRotina()
-    {
-        Scanner s = new Scanner(System.in);
+    
+    public void criar() {
+    	Scanner s = new Scanner(System.in);
         String op;
         
         System.out.println("Digite o nome da Rotina");
@@ -36,8 +36,9 @@ public class Rotina implements Cloneable{
                     System.out.println("Rotina Criada.");
                 }
         }while(op.equals("s"));
+		
+	}
     
-    }
     
     public void editarRotina()
     {
@@ -107,6 +108,8 @@ public class Rotina implements Cloneable{
     	}
     	return obj;
     }
+	
+	
     
     
 }

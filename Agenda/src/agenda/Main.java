@@ -35,6 +35,9 @@ public class Main {
 //		agenda.getListaEvento().add(evento2);
 //		agenda.listarEventos();
 		
+		
+		
+		
 		Agenda agenda = Agenda.getInstance();
 
         System.out.println(agenda.getListaEvento());
@@ -42,6 +45,8 @@ public class Main {
         System.out.println();
 
         Evento evento = new Evento();
+        
+        
         Evento evento2 = new Evento();
 
         agenda.getListaEvento().add(evento);
