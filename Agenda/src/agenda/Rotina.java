@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Rotina implements Cloneable, PadraoComandoCriar{
+public class Rotina extends Template implements Cloneable, PadraoComandoCriar{
     private String nome;
     private List<Evento> listaEventos;
     
@@ -40,7 +40,7 @@ public class Rotina implements Cloneable, PadraoComandoCriar{
 	}
     
     
-    public void editarRotina()
+    public void editar()
     {
         Scanner s = new Scanner(System.in);
         String op;
@@ -60,7 +60,7 @@ public class Rotina implements Cloneable, PadraoComandoCriar{
             op = s.next();
             switch (op) {
                 case "s": {
-                    this.getListaEventos().get(cont).editarEvento();
+                    this.getListaEventos().get(cont).editar();
                     cont++;
                     break;
                 }
@@ -73,7 +73,7 @@ public class Rotina implements Cloneable, PadraoComandoCriar{
          
     }
     
-    public List<Rotina> deletarRotina(List<Rotina> listaRotinas, int posicao)
+    public List<Rotina> deletar(List<Rotina> listaRotinas, int posicao)
     {
         listaRotinas.get(posicao).getListaEventos().clear();
         listaRotinas.remove(posicao);
@@ -108,6 +108,8 @@ public class Rotina implements Cloneable, PadraoComandoCriar{
     	}
     	return obj;
     }
+
+	
 	
 	
     

@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 
 
-public class Evento implements PadraoComandoCriar{
+public class Evento extends Template implements PadraoComandoCriar{
     private String nome;
     private Data data;
     private Hora hora;
@@ -30,7 +30,7 @@ public class Evento implements PadraoComandoCriar{
     
     
     
-    public void editarEvento()
+    public void editar()
     {
         Scanner s = new Scanner(System.in);
         System.out.print("Digite o novo nome do evento: ");        
